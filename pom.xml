@@ -97,8 +97,9 @@
                 </executions>
                 <configuration>
                     <easybTestDirectory>${basedir}/src/main/groovy</easybTestDirectory>
-                    <storyReport>${project.build.directory}/easy/easyb-stories.txt</storyReport>
                     <xmlReport>${project.build.directory}/easyb/easyb-report.xml</xmlReport>
+                    <storyType>html</storyType>
+                    <storyReport>${project.build.directory}/easyb/site/index.html</storyReport>
                 </configuration>
             </plugin>
         </plugins>
