@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory
 
 import pl.bmajsak.github.pages.*
 
-description "Verify project's page on GitHub."
+description "Demonstrating various searching capabilities of github"
 
 before "Start browser and setup shared fixture", {
     projectName = "webdriver-easyb"
