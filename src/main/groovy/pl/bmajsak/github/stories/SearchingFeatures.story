@@ -8,8 +8,9 @@ import pl.bmajsak.github.pages.*
 
 description "Verify project's page on GitHub."
 
-before "Start WebDriver", {
+before "Start browser and setup shared fixture", {
     projectName = "webdriver-easyb"
+    fullProjectName = "bartoszmajsak/" + projectName
     driver = new FirefoxDriver();
 }
 
@@ -31,16 +32,27 @@ scenario "Searching for project ${projectName} by it's name", {
 
 scenario "Search for a file using tree finder", {
     
-    given "User enters project page"
+    fileName = "pom.xml"
     
-    when "Hit keyboard shortcut to enable quick finder"
+    given "User enters project page", {
+        projectPage = new ProjectPage(driver, fullProjectName) 
+        
+    }
     
-    and "types README"
+    when "Hits keyboard shortcut to enable quick finder", {
+        treeFinder = projectPage.enableTreeFinder()
+    }
     
-    then "File should be listed in tree viewer"
+    and "searches for ${fileName}", {
+        treeFinder.type(fileName)
+    }
+    
+    then "File should be listed in tree viewer", {
+        treeFinder.contains(fileName)
+    }
     
 }
 
-after "", {
+after "Close browser", {
     driver.quit();   
 }
