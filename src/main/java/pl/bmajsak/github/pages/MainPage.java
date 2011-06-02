@@ -17,6 +17,7 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;
         this.driver.get(URL);
+        PageFactory.initElements(driver, this);
     }
     
     public ResultsPage searchForProject(String projectName) {

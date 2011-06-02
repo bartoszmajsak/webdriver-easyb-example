@@ -17,7 +17,7 @@ before "Start browser and setup shared fixture", {
 scenario "Searching for project ${projectName} by it's name", {
     
     given "User is on the main page", {
-        mainPage = PageFactory.initElements(driver, MainPage.class)
+        mainPage =  new MainPage(driver)
     }
     
     when "Enters project's name ${projectName} ", {
@@ -36,7 +36,6 @@ scenario "Search for a file using tree finder", {
     
     given "User enters project page", {
         projectPage = new ProjectPage(driver, fullProjectName) 
-        
     }
     
     when "Hits keyboard shortcut to enable quick finder", {
@@ -44,11 +43,11 @@ scenario "Search for a file using tree finder", {
     }
     
     and "searches for ${fileName}", {
-        treeFinder.type(fileName)
+        treeFinder.type fileName
     }
     
     then "File should be listed in tree viewer", {
-        treeFinder.contains(fileName)
+        treeFinder.contains fileName
     }
     
 }

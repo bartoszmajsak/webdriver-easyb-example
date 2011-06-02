@@ -2,7 +2,6 @@ package pl.bmajsak.github.pages;
 
 import org.openqa.selenium.Keyboard;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class ProjectPage {
@@ -13,8 +12,7 @@ public class ProjectPage {
 
     public ProjectPage(WebDriver driver, String project) {
         this.driver = new EventFiringWebDriver(driver);
-        PageFactory.initElements(driver, project);
-        driver.get(BASE_URL + project);
+        this.driver.get(BASE_URL + project);
     }
     
     public TreeFinder enableTreeFinder() {
