@@ -23,11 +23,11 @@ public class ResultsPage {
 
     public void containsProject(String projectName) {
         List<WebElement> foundProjects = driver.findElements(By.xpath(PROJECT_RESULTS));
-        List<String> projectsTitles = Lists.transform(foundProjects, new ExtractText());
+        List<String> projectsTitles = Lists.transform(foundProjects, new ExtractProjectName());
         assertThat(projectsTitles).contains(projectName);
     }
     
-    private final class ExtractText implements Function<WebElement, String> {
+    private final class ExtractProjectName implements Function<WebElement, String> {
         public String apply(WebElement from) {
             String text = from.getText().trim();
             return text.substring(text.lastIndexOf('/') + 1).trim();
