@@ -11,6 +11,7 @@
 
     <properties>
         <version.groovy>1.7.10</version.groovy>
+        <version.groovy.compiler-batch>1.7.10-02</version.groovy.compiler-batch>
         <version.easyb>0.9.7</version.easyb>
         <version.guava>r09</version.guava>
         <version.junit>4.8.2</version.junit>
@@ -81,6 +82,17 @@
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-eclipse-compiler</artifactId>
                         <version>${version.groovy.eclipse.compile}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>org.codehaus.groovy</groupId>
+                                <artifactId>groovy-eclipse-batch</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>>${version.groovy.compiler-batch}</version>
                     </dependency>
                 </dependencies>
             </plugin>
