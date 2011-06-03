@@ -11,14 +11,13 @@
 
     <properties>
         <version.groovy>1.7.10</version.groovy>
-        <version.groovy.compiler-batch>1.7.10-02</version.groovy.compiler-batch>
         <version.easyb>0.9.7</version.easyb>
         <version.guava>r09</version.guava>
         <version.junit>4.8.2</version.junit>
         <version.selenium>2.0b3</version.selenium>
         <version.fest.assert>1.4</version.fest.assert>
         <version.maven.compiler>2.3.1</version.maven.compiler>
-        <version.groovy.eclipse.compile>2.5.1</version.groovy.eclipse.compile>
+        <version.groovy.eclipse.compiler>2.5.1-M3</version.groovy.eclipse.compiler>
         <version.maven.easyb.plugin>0.9.7-1</version.maven.easyb.plugin>
     </properties>
 
@@ -81,18 +80,7 @@
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>${version.groovy.eclipse.compile}</version>
-                        <exclusions>
-                            <exclusion>
-                                <groupId>org.codehaus.groovy</groupId>
-                                <artifactId>groovy-eclipse-batch</artifactId>
-                            </exclusion>
-                        </exclusions>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>>${version.groovy.compiler-batch}</version>
+                        <version>${version.groovy.eclipse.compiler}</version>
                     </dependency>
                 </dependencies>
             </plugin>
