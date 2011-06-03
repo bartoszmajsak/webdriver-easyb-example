@@ -17,7 +17,7 @@
         <version.selenium>2.0b3</version.selenium>
         <version.fest.assert>1.4</version.fest.assert>
         <version.maven.compiler>2.3.1</version.maven.compiler>
-        <version.groovy.eclipse.compile>2.5.1-M3</version.groovy.eclipse.compile>
+        <version.groovy.eclipse.compile>2.5.1</version.groovy.eclipse.compile>
         <version.maven.easyb.plugin>0.9.7-1</version.maven.easyb.plugin>
     </properties>
 
