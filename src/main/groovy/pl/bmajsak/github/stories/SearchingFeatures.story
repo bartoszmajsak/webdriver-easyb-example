@@ -20,12 +20,12 @@ scenario "Searching for project ${projectName} by it's name", {
         mainPage =  new MainPage(driver)
     }
     
-    when "Enters project's name ${projectName} ", {
+    when "Search for project ${projectName}", {
         resultsPage = mainPage.searchForProject(projectName)
     }
     
     then "Link to project site should be listed", {
-        resultsPage.containsProject projectName
+        resultsPage.containsProject(projectName)
     }
     
 }
